@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matching Game</title>
+    <style type="text/css">
+        #myPicture {
+            margin: 0px;
+            width: 467px;
+            height: 662px;
+            display: grid;
+            grid-template-columns: 114px 114px 114px 114px;
+            grid-auto-rows: 163px;
+            border-radius: 8px;
+            background: red;
+
+        }
+        img {
+            margin-left: auto;
+            margin-top: auto;
+            width: 104px;
+            height: 153px;
+        }
+        #mySize {
+            border: black;
+            margin-left: 500px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id='myPicture'></div>
+    <div id="mySize">
+        <button onclick="resetGame()">Reset</button>
+        <span>Số lần click: <input type="button" value="0" id="myScore"></span>
+    </div>
+
+<script src="gamer.js"></script>
+</body>
+</html>
