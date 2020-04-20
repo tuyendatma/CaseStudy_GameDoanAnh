@@ -7,6 +7,7 @@ function Card(name, id, img) {
     this.getImage = function () {
         if (!this.status) {
             return `<img src=${this.frontFace} onclick="findCard(${this.id})">`;
+            // return '<img src=${this.frontFace} onclick="findCard(${this.id})">'
         } else {
             return `<img src=${this.backFace}>`;
         }
@@ -33,7 +34,8 @@ let card13 = new Card('picture5', 13, 'pirates/onepiece5.jpg');
 let card14 = new Card('picture6', 14, 'pirates/onepiece6.jpg');
 let card15 = new Card('picture7', 15, 'pirates/onepiece7.jpg');
 let card16 = new Card('picture8', 16, 'pirates/onepiece8.jpg');
-let cards = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16];
+let cards = [card1, card2, card3, card4, card5, card6, card7, card8,
+    card9, card10, card11, card12, card13, card14, card15, card16];
 let doubleCards = shuffle(cards);
 let count = 0;
 let check = [];
@@ -52,7 +54,7 @@ function display() {
     countClick += 1;
     document.getElementById('myScore').value = countClick;
     if (checkWin === 7 && check[check.length - 1] === check[check.length - 2]) {
-        alert('You Win!');
+        alert('CONGRATULATION!');
     }
 }
 
@@ -60,11 +62,8 @@ function findCard(id) {
     for (let i = 0; i < doubleCards.length; i++) {
         if (doubleCards[i].id === id) {
             doubleCards[i].changeStatus();
-            //doubleCard[i] =true;
             x.push(i);
-            //mảng x thêm giá trị i
             check.push(doubleCards[i].name);
-            //mảng check thêm giá trị tên ảnh
             if (count === 2) {
                 if ((check.length - 3) % 2 === 0) {
                     if (check[check.length - 3] !== check[check.length - 2]) {
