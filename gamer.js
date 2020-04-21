@@ -34,8 +34,8 @@ addCard();
 
 let shuffleCards = shuffle(cards);
 let count = 0;
-let check = [];
-let x = [];
+let checkName = [];
+let mapClick = [];
 let checkWin = 0;
 let countClick = -1;
 let music1 = new Audio();
@@ -49,7 +49,7 @@ function display() {
     }
     countClick += 1;
     document.getElementById('myScore').value = countClick;
-    if (checkWin === 15 && check[check.length - 1] === check[check.length - 2]) {
+    if (checkWin === 15 && checkName[checkName.length - 1] === checkName[checkName.length - 2]) {
         alert('CONGRATULATION!');
     }
 }
@@ -58,13 +58,13 @@ function findCard(id) {
     for (let i = 0; i < shuffleCards.length; i++) {
         if (shuffleCards[i].id === id) {
             shuffleCards[i].changeStatus();
-            x.push(i);
-            check.push(shuffleCards[i].name);
+            mapClick.push(i);
+            checkName.push(shuffleCards[i].name);
             if (count === 2) {
-                if ((check.length - 3) % 2 === 0) {
-                    if (check[check.length - 3] !== check[check.length - 2]) {
-                        shuffleCards[x[x.length - 2]].status = false;
-                        shuffleCards[x[x.length - 3]].status = false;
+                if ((checkName.length - 3) % 2 === 0) {
+                    if (checkName[checkName.length - 3] !== checkName[checkName.length - 2]) {
+                        shuffleCards[mapClick[mapClick.length - 2]].status = false;
+                        shuffleCards[mapClick[mapClick.length - 3]].status = false;
                     } else {
                         checkWin += 1;
                     }
